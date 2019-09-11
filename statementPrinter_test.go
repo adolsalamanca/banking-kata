@@ -10,7 +10,7 @@ import (
 
 var _ = Describe("Banking kata tests", func () {
 
-	It("Should print statement headers if requested", func() {
+	It("Should print headers if requested", func() {
 
 		var buf bytes.Buffer
 		loggerToTest := log.Logger{}
