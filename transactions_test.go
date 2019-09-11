@@ -15,13 +15,16 @@ var _ = Describe("Banking kata tests", func () {
 		Expect(transaction.Date).To(BeEquivalentTo("02-09-2019"))
 	})
 
-	It("Should retrieve a transaction repository properly created", func() {
+	It("Should retrieve an empty transaction repository properly created", func() {
 
-		repository := banking_kata.NewTransactionRepository([]banking_kata.Transaction{
-			*banking_kata.NewTransaction(200, "02-09-2019"),
-			*banking_kata.NewTransaction(-100, "03-09-2019"),
-		})
+		repository := banking_kata.NewTransactionRepository()
+		Expect(len(repository.Transactions)).To(BeEquivalentTo(0))
+	})
 
-		Expect(len(repository.Transactions)).To(BeEquivalentTo(2))
+	It("Should store transactions if add transaction is called", func() {
+
+		repository := banking_kata.NewTransactionRepository()
+		repository.AddTransaction(*banking_kata.NewTransaction(200, "03-09-2019"))
+		Expect(len(repository.Transactions)).To(BeEquivalentTo(1))
 	})
 })

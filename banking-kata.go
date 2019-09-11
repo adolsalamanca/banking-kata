@@ -1,6 +1,7 @@
 package banking_kata
 
-import (
-	"log"
-)
+func main() {
 
+	// bankAccount := NewBankAccount(NewTransactionRepository(), NewStatementPrinter(&log.Logger{}))
+
+}

@@ -8,7 +8,7 @@ import (
 	"log"
 )
 
-var _ = FDescribe("Banking kata tests", func () {
+var _ = Describe("Banking kata tests", func () {
 
 	It("Should generate bank statement after a few operations", func() {
 

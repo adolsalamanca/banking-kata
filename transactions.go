@@ -13,7 +13,10 @@ type TransactionRepository struct {
 	Transactions [] Transaction
 }
 
-func NewTransactionRepository(transactions [] Transaction) *TransactionRepository {
-	return &TransactionRepository{Transactions:transactions}
+func NewTransactionRepository() *TransactionRepository {
+	return &TransactionRepository{}
 }
 
+func (r *TransactionRepository) AddTransaction(transaction Transaction) {
+	r.Transactions = append(r.Transactions, transaction)
+}
