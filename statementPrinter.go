@@ -5,13 +5,13 @@ import (
 	"math"
 )
 
-type StatementPrinter struct{
-	logger *log.Logger
-}
-
 type StatementLine struct {
 	transaction Transaction
 	currentBalance float32
+}
+
+type StatementPrinter struct{
+	logger *log.Logger
 }
 
 func NewStatementLine(t Transaction, cb float32) StatementLine {
@@ -22,16 +22,19 @@ func NewStatementPrinter(loggerInjected *log.Logger) *StatementPrinter {
 	return &StatementPrinter{logger:loggerInjected}
 }
 
-func (s *StatementPrinter) PrintStatementHeaders() {
+func (s *StatementPrinter) PrintAllStatements(statementLines [] StatementLine) {
+	s.printStatementHeaders()
+	s.printArratOfStatements(statementLines)
+}
+
+func (s *StatementPrinter) printStatementHeaders() {
 	statementHeaders := "date || credit || debit || balance"
 	s.logger.Print(statementHeaders)
 }
 
-func (s *StatementPrinter) PrintStatement(lines [] StatementLine) {
-
-	s.PrintStatementHeaders()
-	for i:= len(lines)-1; i>=0; i-- {
-		statementLine := lines[i]
+func (s *StatementPrinter) printArratOfStatements(statementLines []StatementLine) {
+	for i := len(statementLines) - 1; i >= 0; i-- {
+		statementLine := statementLines[i]
 		if statementLine.transaction.Amount > 0 {
 			s.logger.Printf("%s || %.0f || || %.0f\n", statementLine.transaction.Date,
 				statementLine.transaction.Amount, statementLine.currentBalance)
@@ -40,6 +43,4 @@ func (s *StatementPrinter) PrintStatement(lines [] StatementLine) {
 				math.Abs(float64(statementLine.transaction.Amount)), statementLine.currentBalance)
 		}
 	}
-
 }
-

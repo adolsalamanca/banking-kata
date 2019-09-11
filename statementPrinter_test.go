@@ -10,19 +10,6 @@ import (
 
 var _ = Describe("Banking kata tests", func () {
 
-	It("Should print headers if requested", func() {
-
-		var buf bytes.Buffer
-		loggerToTest := log.Logger{}
-		loggerToTest.SetOutput(&buf)
-
-		statementPrinter := banking_kata.NewStatementPrinter(&loggerToTest)
-		statementPrinter.PrintStatementHeaders()
-
-		headers := "date || credit || debit || balance\n"
-		Expect(buf.String()).To(BeEquivalentTo(headers))
-	})
-
 	It("Should print statements and headers if requested", func() {
 
 		var buf bytes.Buffer
@@ -38,7 +25,7 @@ var _ = Describe("Banking kata tests", func () {
 
 		lines := []banking_kata.StatementLine{line1,line2}
 
-		statementPrinter.PrintStatement(lines)
+		statementPrinter.PrintAllStatements(lines)
 
 		headers := "date || credit || debit || balance\n"
 		textString1 := "11-09-2019 || || 100 || 400\n"

@@ -21,7 +21,7 @@ func (a *Account) Withdrawal(t Transaction) {
 
 func (a *Account) PrintBalance() {
 	statementLines := a.retrieveStatementLines()
-	a.statementPrinter.PrintStatement(statementLines)
+	a.statementPrinter.PrintAllStatements(statementLines)
 }
 
 func (a *Account) retrieveStatementLines() []StatementLine{
