@@ -33,10 +33,10 @@ func (s *StatementPrinter) PrintStatement(lines [] StatementLine) {
 	for i:= len(lines)-1; i>=0; i-- {
 		statementLine := lines[i]
 		if statementLine.transaction.Amount > 0 {
-			s.logger.Printf("%s || %.0f || || %.0f", statementLine.transaction.Date,
+			s.logger.Printf("%s || %.0f || || %.0f\n", statementLine.transaction.Date,
 				statementLine.transaction.Amount, statementLine.currentBalance)
 		} else {
-			s.logger.Printf("%s || || %.0f || %.0f", statementLine.transaction.Date,
+			s.logger.Printf("%s || || %.0f || %.0f\n", statementLine.transaction.Date,
 				math.Abs(float64(statementLine.transaction.Amount)), statementLine.currentBalance)
 		}
 	}
