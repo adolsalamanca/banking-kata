@@ -24,7 +24,7 @@ func NewStatementPrinter(loggerInjected *log.Logger) *StatementPrinter {
 
 func (s *StatementPrinter) PrintAllStatements(statementLines [] StatementLine) {
 	s.printStatementHeaders()
-	s.printArratOfStatements(statementLines)
+	s.printArrayOfStatements(statementLines)
 }
 
 func (s *StatementPrinter) printStatementHeaders() {
@@ -32,7 +32,7 @@ func (s *StatementPrinter) printStatementHeaders() {
 	s.logger.Print(statementHeaders)
 }
 
-func (s *StatementPrinter) printArratOfStatements(statementLines []StatementLine) {
+func (s *StatementPrinter) printArrayOfStatements(statementLines []StatementLine) {
 	for i := len(statementLines) - 1; i >= 0; i-- {
 		statementLine := statementLines[i]
 		if statementLine.transaction.Amount > 0 {
