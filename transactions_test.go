@@ -19,7 +19,7 @@ var _ = Describe("Banking kata tests", func () {
 
 		repository := banking_kata.NewTransactionRepository([]banking_kata.Transaction{
 			*banking_kata.NewTransaction(200, "02-09-2019"),
-			*banking_kata.NewTransaction(200, "02-09-2019"),
+			*banking_kata.NewTransaction(-100, "03-09-2019"),
 		})
 
 		Expect(len(repository.Transactions)).To(BeEquivalentTo(2))
