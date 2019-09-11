@@ -4,10 +4,14 @@ Think of your personal bank account experience. If any doubt, go for the simples
 
 Requirements
 ------------
+
+Go installed and GOPATH properly configured
+
+Code: <br/>
 Account will expose only 3 methods: <br/>
  - Deposit, Withdrawal and PrintStatement <br/>
  - Show your TDD skills! <br/>
- - Go simple, small methods and files
+ - Go simple, small methods and files <br/>
  
  
 Started from defining an acceptance test:
@@ -23,6 +27,13 @@ date       || credit   || debit    || balance
 13/01/2012 || 2000.00  ||          || 3000.00  
 10/01/2012 || 1000.00  ||          || 1000.00   
 
-Do it yourself first and then compare the solutions. <br/>
+<br/>Do it yourself first and then compare the solutions. <br/>
  
-http://kata-log.rocks/banking-kata
+http://kata-log.rocks/banking-kata<br/>
+
+
+
+Test my solution
+------------
+
+To test my solution just clone the repo and run go test.
