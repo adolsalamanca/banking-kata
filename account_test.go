@@ -19,13 +19,13 @@ var _ = Describe("Banking kata tests", func () {
 		buffer = bytes.Buffer{}
 
 		logger.SetOutput(&buffer)
-		account = banking_kata.NewBankAccount(banking_kata.NewTransactionRepository(), banking_kata.NewStatementPrinter(logger))
+		account = banking_kata.NewAccount(banking_kata.NewTransactionRepository(), banking_kata.NewStatementPrinter(logger))
 	})
 
-	It("Should perform a store operation if requested", func() {
+	It("Should perform a deposit operation if requested", func() {
 
 		transaction := banking_kata.NewTransaction(100,"11-09-2019")
-		account.Store(*transaction)
+		account.Deposit(*transaction)
 		account.PrintBalance()
 
 		Expect(buffer.String()).To(ContainSubstring("11-09-2019 || 100"))
@@ -46,7 +46,7 @@ var _ = Describe("Banking kata tests", func () {
 		transaction1 := banking_kata.NewTransaction(100,"10-09-2019")
 		transaction2 := banking_kata.NewTransaction(50,"11-09-2019")
 
-		account.Store(*transaction1)
+		account.Deposit(*transaction1)
 		account.Withdrawal(*transaction2)
 
 		headers := "date || credit || debit || balance\n"

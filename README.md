@@ -4,25 +4,12 @@ Think of your personal bank account experience. If any doubt, go for the simples
 
 Requirements
 ------------
-
-Deposit and Withdrawal  
-Transfer  
-Account statement (date, amount, balance)  
-Statement printing  
-Statement filters (just deposits, withdrawal, date)
-
-The Rules
----------
-#### For more information:
-
--  [Object Calisthenics pdf](http://www.cs.helsinki.fi/u/luontola/tdd-2009/ext/ObjectCalisthenics.pdf)
--  Object Calisthenics (full book), Jeff Bay in: The ThoughtWorks Anthology.
-Pragmatic Bookshelf 2008
--  Original idea for the kata: How Object-Oriented Are You Feeling Today? - Krzysztof Jelski (Session on the Software Craftsmanship UK 2011 conference)
-
-
-### Solution
-
+Account will expose only 3 methods: <br/>
+ - Deposit, Withdrawal and PrintStatement <br/>
+ - Show your TDD skills! <br/>
+ - Go simple, small methods and files
+ 
+ 
 Started from defining an acceptance test:
 
 > Given a client makes a deposit of 1000 on 10-01-2012  
@@ -36,4 +23,6 @@ date       || credit   || debit    || balance
 13/01/2012 || 2000.00  ||          || 3000.00  
 10/01/2012 || 1000.00  ||          || 1000.00   
 
-Do it yourself first and then compare the solutions. 
+Do it yourself first and then compare the solutions. <br/>
+ 
+http://kata-log.rocks/banking-kata

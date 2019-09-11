@@ -6,11 +6,11 @@ type Account struct {
 	statementPrinter *StatementPrinter
 }
 
-func NewBankAccount(r *TransactionRepository, sp *StatementPrinter) *Account {
+func NewAccount(r *TransactionRepository, sp *StatementPrinter) *Account {
 	return &Account{repository: r, statementPrinter: sp}
 }
 
-func (a *Account) Store(t Transaction) {
+func (a *Account) Deposit(t Transaction) {
 	a.repository.Transactions = append(a.repository.Transactions, t)
 }
 
