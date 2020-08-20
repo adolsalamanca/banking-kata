@@ -1,3 +1,5 @@
+[![Actions Status](https://github.com/adolsalamanca/banking-kata/workflows/Go/badge.svg)](https://github.com/adolsalamanca/banking-kata/actions)
+
 ## Banking-Kata
 
 Think of your personal bank account experience. If any doubt, go for the simplest solution
