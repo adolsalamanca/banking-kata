@@ -1,16 +1,16 @@
-package banking_kata_test
+package internal_test
 
 import (
 	"bytes"
-	banking_kata "github.com/adolsalamanca/banking-kata"
+	"github.com/adolsalamanca/banking-kata/internal"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 	"log"
 )
 
-var _ = Describe("Banking kata tests", func () {
+var _ = Describe("Banking kata tests", func() {
 
-	var account *banking_kata.Account
+	var account *internal.Account
 	var logger *log.Logger
 	var buffer bytes.Buffer
 
@@ -19,12 +19,12 @@ var _ = Describe("Banking kata tests", func () {
 		buffer = bytes.Buffer{}
 
 		logger.SetOutput(&buffer)
-		account = banking_kata.NewAccount(banking_kata.NewTransactionRepository(), banking_kata.NewStatementPrinter(logger))
+		account = internal.NewAccount(internal.NewTransactionRepository(), internal.NewStatementPrinter(logger))
 	})
 
 	It("Should perform a deposit operation if requested", func() {
 
-		transaction := banking_kata.NewTransaction(100,"11-09-2019")
+		transaction := internal.NewTransaction(100, "11-09-2019")
 		account.Deposit(*transaction)
 		account.PrintBalance()
 
@@ -33,18 +33,17 @@ var _ = Describe("Banking kata tests", func () {
 
 	It("Should perform a withdrawal operation if requested", func() {
 
-		transaction := banking_kata.NewTransaction(100,"11-09-2019")
+		transaction := internal.NewTransaction(100, "11-09-2019")
 		account.Withdrawal(*transaction)
 		account.PrintBalance()
 
 		Expect(buffer.String()).To(ContainSubstring("11-09-2019 || || 100"))
 	})
 
-
 	It("Should print statement properly after a few transactions", func() {
 
-		transaction1 := banking_kata.NewTransaction(100,"10-09-2019")
-		transaction2 := banking_kata.NewTransaction(50,"11-09-2019")
+		transaction1 := internal.NewTransaction(100, "10-09-2019")
+		transaction2 := internal.NewTransaction(50, "11-09-2019")
 
 		account.Deposit(*transaction1)
 		account.Withdrawal(*transaction2)
@@ -54,7 +53,7 @@ var _ = Describe("Banking kata tests", func () {
 		textString2 := "10-09-2019 || 100 || || 100\n"
 
 		account.PrintBalance()
-		Expect(buffer.String()).To(BeEquivalentTo(headers+textString1+textString2))
+		Expect(buffer.String()).To(BeEquivalentTo(headers + textString1 + textString2))
 	})
 
 })

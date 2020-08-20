@@ -1,4 +1,4 @@
-package banking_kata_test
+package internal_test
 
 import (
 	"testing"

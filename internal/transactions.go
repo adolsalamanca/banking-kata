@@ -1,4 +1,4 @@
-package banking_kata
+package internal
 
 type Transaction struct {
 	Amount float32

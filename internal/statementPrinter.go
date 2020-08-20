@@ -1,4 +1,4 @@
-package banking_kata
+package internal
 
 import (
 	"log"
