@@ -1,4 +1,4 @@
-[![Actions Status](https://xxx.execute-api.us-west-2.amazonaws.com/production/badge/{adolsalamanca}/{banking-kata})](https://xxx.execute-api.us-west-2.amazonaws.com/production/results/{adolsalamanca}/{banking-kata})
+[![Actions Status](https://github.com/adolsalamanca/banking-kata/workflows/Go/badge.svg)](https://github.com/adolsalamanca/banking-kata/actions)
 
 ## Banking-Kata
 
