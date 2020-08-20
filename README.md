@@ -1,3 +1,5 @@
+[![Actions Status](https://xxx.execute-api.us-west-2.amazonaws.com/production/badge/{adolsalamanca}/{banking-kata})](https://xxx.execute-api.us-west-2.amazonaws.com/production/results/{adolsalamanca}/{banking-kata})
+
 ## Banking-Kata
 
 Think of your personal bank account experience. If any doubt, go for the simplest solution
